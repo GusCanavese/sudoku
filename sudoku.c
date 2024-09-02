@@ -13,13 +13,11 @@ int main() {
 
     retornaDificuldade();
 
-
-    printf("qual coordenada voce gostaria de preencher?: \n");
+    printf("\nqual coordenada voce gostaria de preencher? (digite x  y): ");
     scanf("%i %i", &x, &y);
-    printf("com qual valor? \n");
+    printf("com qual valor: ");
     scanf("%i", &valor);
     
-
     retornaValorInserido(x, y, valor);
 
 

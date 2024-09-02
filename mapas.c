@@ -11,10 +11,10 @@ void printGrid(int grid[9][9]) {
         }
 
         for (int j = 0; j < 9; j++) {
-            printf("%d ", grid[i][j]);
+            printf(" %d ", grid[i][j]);
 
             if (j == 2 || j == 5) {
-                printf(" ");
+                printf("|");
 
             }
         }
@@ -138,8 +138,9 @@ void retornaDificuldade(){
     srand(time(NULL));
     int z = rand() % 3;
     int dificuldade = 0;
-    printf("selecione a dificuldade: \n Facil --> 1 \n Medio --> 2 \n Dificil --> 3 \n");
+    printf("selecione a dificuldade: \n Facil   --> 1 \n Medio   --> 2 \n Dificil --> 3 \n");
     scanf("%i", &dificuldade);
+    printf("a dificuldade %i foi selecionada \n", dificuldade);
     if (dificuldade == 1){
         switch (z){
         case 0:
@@ -232,8 +233,8 @@ void retornaDificuldade(){
 
 
 
-int retornaValorInserido(int x, int y, int valor){
-    return gridAtual[x][y] = valor;
-    printGrid (gridAtual);
+void retornaValorInserido(int x, int y, int valor){
+    gridAtual[x][y] = valor;
+    printGrid(gridAtual);
 }
 
