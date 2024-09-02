@@ -5,23 +5,60 @@
 int gridAtual[9][9] = {0};
 
 void printGrid(int grid[9][9]) {
-        for (int i = 0; i < 9; i++) {
-        if (i == 3 || i == 6) {
-            printf("\n");
+    printf("    ");
+    for (int j = 0; j < 9; j++) {
+        printf(" %d ", j);
+        if (j == 2 || j == 5) {
+            printf(" ");
         }
+    }
+    printf("\n");
 
+    printf("   ");
+    for (int j = 0; j < 9; j++) {
+        printf("---");
+        if (j == 2 || j == 5) {
+            printf("-");
+        }
+    }
+    printf("\n");
+
+    for (int i = 0; i < 9; i++) {
+        printf(" %d |", i);
         for (int j = 0; j < 9; j++) {
             printf(" %d ", grid[i][j]);
 
             if (j == 2 || j == 5) {
                 printf("|");
-
             }
         }
+
+        printf("|");
+
         printf("\n");
+        if (i == 2 || i == 5) {
+            printf("   ");
+            for (int j = 0; j < 9; j++) {
+                printf("---");
+                if (j == 2 || j == 5) {
+                    printf("-");
+                }
+            }
+            printf("\n");
+        }
     }
+
+    printf("   ");
+    for (int j = 0; j < 9; j++) {
+        printf("---");
+        if (j == 2 || j == 5) {
+            printf("-");
+        }
+    }
+    printf("\n");
 }
-        // facil 21 dicas
+
+    // facil tem 21 dicas
     int grid1[9][9] = {
         {0, 3, 0, 0, 7, 0, 0, 0, 0},
         {0, 0, 0, 1, 9, 5, 0, 0, 0},
