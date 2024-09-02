@@ -175,9 +175,10 @@ void retornaDificuldade(){
     srand(time(NULL));
     int z = rand() % 3;
     int dificuldade = 0;
-    printf("selecione a dificuldade: \n Facil   --> 1 \n Medio   --> 2 \n Dificil --> 3 \n");
+    printf("Selecione a dificuldade: \n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
+    printf("Digite a dificuldade escolhida: ");
     scanf("%i", &dificuldade);
-    printf("a dificuldade %i foi selecionada \n", dificuldade);
+    printf("\n");
     if (dificuldade == 1){
         switch (z){
         case 0:
