@@ -271,8 +271,13 @@ void retornaDificuldade(){
 
 
 
-void retornaValorInserido(int x, int y, int valor){
-    gridAtual[x][y] = valor;
-    printGrid(gridAtual);
+int retornaValorInserido(int x, int y, int valor){
+    if (gridAtual[x][y] != 0){
+        return 1;
+    } else {
+        gridAtual[x][y] = valor;
+        printGrid(gridAtual);
+        return 0;
+    }
 }
 

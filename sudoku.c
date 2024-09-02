@@ -17,9 +17,15 @@ int main() {
     scanf("%i %i", &x, &y);
     printf("com qual valor: ");
     scanf("%i", &valor);
-    
     retornaValorInserido(x, y, valor);
 
 
+    while (retornaValorInserido(x, y, valor)){
+        printf("\n\n\no valor inserido ja esta preenchido, nao eh valido\n");
+        printf("\nqual coordenada voce gostaria de preencher? (digite x  y): ");
+        scanf("%i %i", &x, &y);
+        printf("com qual valor: ");
+        scanf("%i", &valor);
+    }
     return 0;
 }
