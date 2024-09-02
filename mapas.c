@@ -21,8 +21,6 @@ void printGrid(int grid[9][9]) {
         printf("\n");
     }
 }
-
-void retornaDificuldade(){
     // facil tem 21 dicas
     int grid1[9][9] = {
         {5, 3, 0, 0, 7, 0, 0, 0, 0},
@@ -135,6 +133,7 @@ void retornaDificuldade(){
     };
 
 
+void retornaDificuldade(){
 
     srand(time(NULL));
     int z = rand() % 3;
@@ -146,7 +145,7 @@ void retornaDificuldade(){
         case 0:
             printGrid(grid1);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid1[i][j];
                 }
             }
@@ -155,7 +154,7 @@ void retornaDificuldade(){
         case 1:
             printGrid(grid2);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid2[i][j];
                 }
             }
@@ -164,7 +163,7 @@ void retornaDificuldade(){
         case 2:
             printGrid(grid3);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid3[i][j];
                 }
             }
@@ -175,7 +174,7 @@ void retornaDificuldade(){
         case 0:
             printGrid(grid4);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid4[i][j];
                 }
             }
@@ -184,7 +183,7 @@ void retornaDificuldade(){
         case 1:
             printGrid(grid5);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid5[i][j];
                 }
             }
@@ -193,7 +192,7 @@ void retornaDificuldade(){
         case 2:
             printGrid(grid6);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid6[i][j];
                 }
             }
@@ -204,7 +203,7 @@ void retornaDificuldade(){
         case 0:
             printGrid(grid7);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid7[i][j];
                 }
             }
@@ -213,7 +212,7 @@ void retornaDificuldade(){
         case 1:
             printGrid(grid8);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid8[i][j];
                 }
             }
@@ -222,7 +221,7 @@ void retornaDificuldade(){
         case 2:
             printGrid(grid9);
             for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; i++){
+                for (int j = 0; j <=9; j++){
                     gridAtual[i][j] = grid9[i][j];
                 }
             }
@@ -231,4 +230,10 @@ void retornaDificuldade(){
     }
 }
 
-// teste commit gustacvo 
+
+
+int retornaValorInserido(int x, int y, int valor){
+    return gridAtual[x][y] = valor;
+    printGrid (gridAtual);
+}
+
