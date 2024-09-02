@@ -23,7 +23,7 @@ void printGrid(int grid[9][9]) {
 }
 
 void retornaDificuldade(){
-    // fácil 21 ducas
+    // fácil 21 dicas
     int grid1[9][9] = {
         {5, 3, 0, 0, 7, 0, 0, 0, 0},
         {6, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -35,7 +35,6 @@ void retornaDificuldade(){
         {0, 0, 0, 4, 1, 9, 0, 0, 5},
         {0, 0, 0, 0, 8, 0, 0, 7, 9}
     };
-
     int grid2[9][9] = {
         {1, 0, 0, 0, 0, 7, 0, 9, 0},
         {0, 3, 0, 0, 2, 0, 0, 0, 8},
@@ -47,7 +46,6 @@ void retornaDificuldade(){
         {0, 4, 1, 0, 0, 0, 0, 0, 7},
         {0, 0, 7, 0, 0, 0, 3, 0, 0}
     };
-
     int grid3[9][9] = {
         {0, 0, 0, 2, 6, 0, 7, 0, 1},
         {6, 8, 0, 0, 7, 0, 0, 9, 0},
@@ -59,7 +57,6 @@ void retornaDificuldade(){
         {0, 4, 0, 0, 5, 0, 0, 3, 6},
         {7, 0, 3, 0, 1, 8, 0, 0, 0}
     };
-
     // médio 19 dicas
     int grid4[9][9] = {
         {0, 0, 0, 6, 0, 0, 4, 0, 0},
@@ -72,7 +69,6 @@ void retornaDificuldade(){
         {9, 0, 3, 0, 0, 0, 0, 0, 0},
         {0, 2, 0, 0, 0, 0, 1, 0, 0}
     };
-
     int grid5[9][9] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 8},
         {0, 0, 0, 0, 6, 0, 0, 0, 0},
@@ -84,7 +80,6 @@ void retornaDificuldade(){
         {0, 0, 0, 0, 9, 0, 0, 0, 0},
         {7, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-    //a
     int grid6[9][9] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 3, 0, 0, 0, 0, 0, 2, 0},
@@ -108,7 +103,6 @@ void retornaDificuldade(){
         {0, 0, 0, 0, 2, 0, 0, 0, 0},
         {0, 1, 0, 0, 0, 0, 0, 0, 3}
     };
-
     int grid8[9][9] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 2, 0, 0, 0, 0, 0},
@@ -120,7 +114,6 @@ void retornaDificuldade(){
         {0, 0, 0, 0, 0, 9, 0, 0, 0},
         {8, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-
     int grid9[9][9] = {
         {0, 0, 0, 0, 0, 0, 0, 8, 0},
         {0, 0, 7, 0, 0, 0, 0, 0, 0},
@@ -133,13 +126,13 @@ void retornaDificuldade(){
         {0, 9, 0, 0, 0, 0, 0, 0, 0}
     };
 
-
-
     srand(time(NULL));
     int z = rand() % 3;
     int dificuldade = 0;
     printf("selecione a dificuldade: \n Facil --> 1 \n Medio --> 2 \n Dificil --> 3 \n");
+    printf("")
     scanf("%i", &dificuldade);
+
     if (dificuldade == 1){
         switch (z){
         case 0:
