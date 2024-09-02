@@ -23,6 +23,7 @@ void printGrid(int grid[9][9]) {
 }
 
 void retornaDificuldade(){
+    // fácil 21 ducas
     int grid1[9][9] = {
         {5, 3, 0, 0, 7, 0, 0, 0, 0},
         {6, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -59,6 +60,7 @@ void retornaDificuldade(){
         {7, 0, 3, 0, 1, 8, 0, 0, 0}
     };
 
+    // médio 19 dicas
     int grid4[9][9] = {
         {0, 0, 0, 6, 0, 0, 4, 0, 0},
         {7, 0, 0, 0, 0, 3, 6, 0, 0},
@@ -94,7 +96,7 @@ void retornaDificuldade(){
         {0, 6, 0, 0, 0, 0, 0, 4, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-
+    //difícil 17 dicas
     int grid7[9][9] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 3, 0, 0, 0, 0},
@@ -183,4 +185,4 @@ void retornaDificuldade(){
     }
 }
 
-// criar os outros casos
+// teste
