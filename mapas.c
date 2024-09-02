@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int gridAtual = {0};
+int gridAtual[9][9] = {0};
 
 void printGrid(int grid[9][9]) {
         for (int i = 0; i < 9; i++) {
@@ -23,7 +23,7 @@ void printGrid(int grid[9][9]) {
 }
 
 void retornaDificuldade(){
-    // fácil 21 ducas
+    // facil tem 21 dicas
     int grid1[9][9] = {
         {5, 3, 0, 0, 7, 0, 0, 0, 0},
         {6, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -60,7 +60,7 @@ void retornaDificuldade(){
         {7, 0, 3, 0, 1, 8, 0, 0, 0}
     };
 
-    // médio 19 dicas
+    // medio tem 19
     int grid4[9][9] = {
         {0, 0, 0, 6, 0, 0, 4, 0, 0},
         {7, 0, 0, 0, 0, 3, 6, 0, 0},
@@ -96,7 +96,8 @@ void retornaDificuldade(){
         {0, 6, 0, 0, 0, 0, 0, 4, 0},
         {0, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-    //difícil 17 dicas
+
+    // dificil tem 17 dicas
     int grid7[9][9] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 0, 0, 0, 3, 0, 0, 0, 0},
@@ -144,14 +145,29 @@ void retornaDificuldade(){
         switch (z){
         case 0:
             printGrid(grid1);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid1[i][j];
+                }
+            }
             break;
 
         case 1:
             printGrid(grid2);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid2[i][j];
+                }
+            }
             break;
 
         case 2:
             printGrid(grid3);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid3[i][j];
+                }
+            }
             break;
         }
     } else if (dificuldade == 2){
