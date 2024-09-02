@@ -184,3 +184,4 @@ void retornaDificuldade(){
 }
 
 // criar os outros casos
+//teasadas
