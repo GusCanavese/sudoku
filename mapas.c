@@ -269,10 +269,15 @@ void retornaDificuldade(){
     }
 }
 
-
-
-void retornaValorInserido(int x, int y, int valor){
-    gridAtual[x][y] = valor;
-    printGrid(gridAtual);
+int retornaValorInserido(int x, int y, int valor){
+    if (gridAtual[x][y] != 0) {
+        printGrid(gridAtual);
+        printf("\nA coordenada inserida ja foi pre-preenchida, escolha outra!");
+        return 1;
+    } else {
+        gridAtual[x][y] = valor;
+        printGrid(gridAtual);
+        return 0;
+    }
 }
 
