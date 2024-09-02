@@ -129,8 +129,7 @@ void retornaDificuldade(){
     srand(time(NULL));
     int z = rand() % 3;
     int dificuldade = 0;
-    printf("selecione a dificuldade: \n Facil --> 1 \n Medio --> 2 \n Dificil --> 3 \n");
-    printf("")
+    printf("selecione a dificuldade: \n Facil --> 1 \n Medio --> 2 \n Dificil --> 4 \n");
     scanf("%i", &dificuldade);
 
     if (dificuldade == 1){
