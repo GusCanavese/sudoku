@@ -11,17 +11,21 @@ void printGrid(int grid[9][9]) {
         }
 
         for (int j = 0; j < 9; j++) {
-            printf("%d ", grid[i][j]);
+            printf(" %d ", grid[i][j]);
 
             if (j == 2 || j == 5) {
-                printf(" ");
+                printf("|");
 
             }
         }
         printf("\n");
     }
 }
+<<<<<<< HEAD
     // facil 21 dicas
+=======
+        // facil 21 dicas
+>>>>>>> c94064d1833c653be279084983fae81e315a6e6f
     int grid1[9][9] = {
         {0, 3, 0, 0, 7, 0, 0, 0, 0},
         {0, 0, 0, 1, 9, 5, 0, 0, 0},
@@ -138,9 +142,14 @@ void retornaDificuldade(){
     srand(time(NULL));
     int z = rand() % 3;
     int dificuldade = 0;
+<<<<<<< HEAD
     printf("\nSelecione a dificuldade: \n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
+=======
+    printf("Selecione a dificuldade: \n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
+>>>>>>> c94064d1833c653be279084983fae81e315a6e6f
     printf("Digite a dificuldade escolhida: ");
     scanf("%i", &dificuldade);
+    printf("\n");
     if (dificuldade == 1){
         switch (z){
         case 0:
@@ -231,7 +240,17 @@ void retornaDificuldade(){
     }
 }
 
+<<<<<<< HEAD
 int retornaValorInserido(int x, int y, int valor){
     return gridAtual[x][y] = valor;
     printGrid (gridAtual);
 }
+=======
+
+
+void retornaValorInserido(int x, int y, int valor){
+    gridAtual[x][y] = valor;
+    printGrid(gridAtual);
+}
+
+>>>>>>> c94064d1833c653be279084983fae81e315a6e6f
