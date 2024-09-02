@@ -57,12 +57,8 @@ void printGrid(int grid[9][9]) {
     }
     printf("\n");
 }
-<<<<<<< HEAD
 
     // facil tem 21 dicas
-=======
-        // facil 21 dicas
->>>>>>> 9716437da188e247a14fd922c305972e9b328528
     int grid1[9][9] = {
         {0, 3, 0, 0, 7, 0, 0, 0, 0},
         {0, 0, 0, 1, 9, 5, 0, 0, 0},
