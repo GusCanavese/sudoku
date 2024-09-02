@@ -174,31 +174,61 @@ void retornaDificuldade(){
         switch (z){
         case 0:
             printGrid(grid4);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid4[i][j];
+                }
+            }
             break;
 
         case 1:
             printGrid(grid5);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid5[i][j];
+                }
+            }
             break;
 
         case 2:
             printGrid(grid6);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid6[i][j];
+                }
+            }
             break;
         }
     } else if (dificuldade == 3) {
         switch (z){
         case 0:
             printGrid(grid7);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid7[i][j];
+                }
+            }
             break;
 
         case 1:
             printGrid(grid8);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid8[i][j];
+                }
+            }
             break;
 
         case 2:
             printGrid(grid9);
+            for (int i = 0; i <= 9; i++){
+                for (int j = 0; j <=9; i++){
+                    gridAtual[i][j] = grid9[i][j];
+                }
+            }
             break;
         }
     }
 }
 
-// teste
+// teste commit gustacvo 
