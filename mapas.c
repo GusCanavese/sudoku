@@ -4,6 +4,13 @@
 
 int gridAtual[9][9] = {0};
 
+typedef struct
+{
+    int x;
+    int y;
+}Coords;
+Coords coordenadas[81];
+
 void printGrid(int grid[9][9]) {
     printf("    ");
     for (int j = 0; j < 9; j++) {
@@ -57,7 +64,6 @@ void printGrid(int grid[9][9]) {
     }
     printf("\n");
 }
-
     // facil tem 21 dicas
     int grid1[9][9] = {
         {0, 3, 0, 0, 7, 0, 0, 0, 0},
@@ -70,7 +76,6 @@ void printGrid(int grid[9][9]) {
         {0, 0, 0, 0, 1, 9, 0, 0, 5},
         {0, 0, 0, 0, 8, 0, 0, 7, 0}
     };
-
     int grid2[9][9] = {
         {1, 0, 0, 0, 0, 7, 0, 9, 0},
         {0, 3, 0, 0, 2, 0, 0, 0, 8},
@@ -82,7 +87,6 @@ void printGrid(int grid[9][9]) {
         {0, 4, 1, 0, 0, 0, 0, 0, 7},
         {0, 0, 7, 0, 0, 0, 3, 0, 0}
     };
-
     int grid3[9][9] = {
         {0, 0, 0, 2, 0, 0, 0, 0, 1},
         {6, 0, 0, 0, 7, 0, 0, 9, 0},
@@ -94,7 +98,6 @@ void printGrid(int grid[9][9]) {
         {0, 0, 0, 0, 5, 0, 0, 0, 6},
         {0, 0, 3, 0, 1, 0, 0, 0, 0}
     };
-
     // medio 19 dicas
     int grid4[9][9] = {
         {0, 0, 0, 6, 0, 0, 0, 0, 0},
@@ -107,7 +110,6 @@ void printGrid(int grid[9][9]) {
         {9, 0, 3, 0, 0, 0, 0, 0, 0},
         {0, 2, 0, 0, 0, 0, 1, 0, 0}
     };
-
     int grid5[9][9] = {
         {4, 0, 0, 0, 0, 0, 0, 0, 8},
         {0, 0, 0, 0, 6, 0, 0, 0, 0},
@@ -119,7 +121,6 @@ void printGrid(int grid[9][9]) {
         {0, 3, 0, 0, 9, 0, 0, 5, 0},
         {7, 0, 0, 0, 0, 0, 0, 0, 0}
     };
-
     int grid6[9][9] = {
         {8, 0, 0, 0, 0, 0, 0, 0, 0},
         {0, 3, 0, 0, 1, 0, 0, 2, 0},
@@ -131,7 +132,6 @@ void printGrid(int grid[9][9]) {
         {0, 6, 0, 0, 0, 0, 0, 4, 0},
         {3, 0, 0, 0, 0, 0, 0, 0, 1}
     };
-
     // dificil 17 dicas
     int grid7[9][9] = {
         {0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -144,7 +144,6 @@ void printGrid(int grid[9][9]) {
         {0, 0, 0, 0, 2, 0, 0, 0, 0},
         {0, 1, 0, 0, 0, 6, 0, 0, 3}
     };
-
     int grid8[9][9] = {
         {0, 0, 0, 0, 0, 0, 7, 0, 9},
         {0, 0, 0, 2, 0, 0, 0, 0, 0},
@@ -156,7 +155,6 @@ void printGrid(int grid[9][9]) {
         {5, 0, 0, 0, 0, 9, 0, 0, 0},
         {8, 0, 0, 7, 0, 0, 0, 0, 0}
     };
-
     int grid9[9][9] = {
         {3, 1, 0, 0, 0, 0, 0, 8, 0},
         {0, 0, 7, 0, 0, 0, 0, 0, 0},
@@ -168,12 +166,10 @@ void printGrid(int grid[9][9]) {
         {0, 0, 1, 0, 0, 0, 0, 2, 5},
         {0, 9, 0, 0, 0, 0, 0, 0, 0}
     };
-
-
 void retornaDificuldade(){
 
     srand(time(NULL));
-    int z = rand() % 3;
+    int z = rand() % 3, cont = 0;
     int dificuldade = 0;
     printf("Selecione a dificuldade: \n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
     printf("Digite a dificuldade escolhida: ");
@@ -182,27 +178,43 @@ void retornaDificuldade(){
     if (dificuldade == 1){
         switch (z){
         case 0:
+            cont = 0;
             printGrid(grid1);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid1[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid1[i][j];
                 }
             }
             break;
-
         case 1:
+            cont = 0;
             printGrid(grid2);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid2[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid2[i][j];
                 }
             }
             break;
-
         case 2:
+            cont = 0;
             printGrid(grid3);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid3[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid3[i][j];
                 }
             }
@@ -211,27 +223,43 @@ void retornaDificuldade(){
     } else if (dificuldade == 2){
         switch (z){
         case 0:
+            cont = 0;
             printGrid(grid4);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid4[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid4[i][j];
                 }
             }
             break;
-
         case 1:
+            cont = 0;
             printGrid(grid5);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid5[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid5[i][j];
                 }
             }
             break;
-
         case 2:
+            cont = 0;
             printGrid(grid6);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid6[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid6[i][j];
                 }
             }
@@ -240,27 +268,43 @@ void retornaDificuldade(){
     } else if (dificuldade == 3) {
         switch (z){
         case 0:
+            cont = 0;
             printGrid(grid7);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid7[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid7[i][j];
                 }
             }
             break;
-
         case 1:
+            cont = 0;
             printGrid(grid8);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid8[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid8[i][j];
                 }
             }
             break;
-
         case 2:
+            cont = 0;
             printGrid(grid9);
-            for (int i = 0; i <= 9; i++){
-                for (int j = 0; j <=9; j++){
+            for (int i = 0; i < 9; i++){
+                for (int j = 0; j < 9; j++){
+                    if (grid9[i][j] != 0){
+                        coordenadas[cont].x = i;
+                        coordenadas[cont].y = j;
+                        cont++;
+                    }
                     gridAtual[i][j] = grid9[i][j];
                 }
             }
@@ -268,6 +312,7 @@ void retornaDificuldade(){
         }
     }
 }
+<<<<<<< HEAD
 
 
 
@@ -281,3 +326,17 @@ int retornaValorInserido(int x, int y, int valor){
     }
 }
 
+=======
+int retornaValorInserido(int x, int y, int valor) {
+    for (int i = 0; i < 81; i++) {
+        if (coordenadas[i].x == x && coordenadas[i].y == y) {
+            printGrid(gridAtual);
+            printf("\nA coordenada inserida ja foi pre-preenchida, escolha outra!");
+            return 0; 
+        }
+    }
+    gridAtual[x][y] = valor;
+    printGrid(gridAtual);
+    return 1; 
+}
+>>>>>>> 9e898c8bc8aabfd5c6cc99aa1421422e6808c840
