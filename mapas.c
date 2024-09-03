@@ -312,21 +312,7 @@ void retornaDificuldade(){
         }
     }
 }
-<<<<<<< HEAD
 
-
-
-int retornaValorInserido(int x, int y, int valor){
-    if (gridAtual[x][y] != 0){
-        return 1;
-    } else {
-        gridAtual[x][y] = valor;
-        printGrid(gridAtual);
-        return 0;
-    }
-}
-
-=======
 int retornaValorInserido(int x, int y, int valor) {
     for (int i = 0; i < 81; i++) {
         if (coordenadas[i].x == x && coordenadas[i].y == y) {
@@ -339,4 +325,3 @@ int retornaValorInserido(int x, int y, int valor) {
     printGrid(gridAtual);
     return 1; 
 }
->>>>>>> 9e898c8bc8aabfd5c6cc99aa1421422e6808c840
