@@ -4,8 +4,7 @@
 
 int gridAtual[9][9] = {0};
 
-typedef struct
-{
+typedef struct{
     int x;
     int y;
 }Coords;
@@ -64,6 +63,7 @@ void printGrid(int grid[9][9]) {
     }
     printf("\n");
 }
+    
     // facil tem 21 dicas
     int grid1[9][9] = {
         {0, 3, 0, 0, 7, 0, 0, 0, 0},
@@ -166,7 +166,62 @@ void printGrid(int grid[9][9]) {
         {0, 0, 1, 0, 0, 0, 0, 2, 5},
         {0, 9, 0, 0, 0, 0, 0, 0, 0}
     };
-void retornaDificuldade(){
+
+
+
+void gerarMapaAleatorio(int maxNum){
+    srand(time(NULL));
+    int gridAleatoria[9][9] = {0};
+    int preenchidos = 0;
+    while (preenchidos < maxNum) {
+        int j = rand() % 9;
+        int i = rand() % 9;
+
+        if (gridAleatoria[i][j] == 0) {
+            gridAleatoria[i][j] = rand() % 10;  
+            preenchidos++;
+        }
+    }
+    printGrid(gridAleatoria);
+}
+
+int telaInicial(){
+    int x = 0;
+    printf("*****************************************************\n");
+    printf("*               Boas vindas jogador!                *\n");
+    printf("*               1 -   Novo Jogo                     *\n");
+    printf("*               2 - Carregar jogo                   *\n");
+    printf("*****************************************************\n");
+    
+    
+    while (x != 1 || x != 2){
+        printf("Digite sua escolha: ");
+        scanf("%i", &x);
+        if(x == 1){
+            return 1;
+        } else if (x == 2){
+            return 2;
+        }
+        printf("esse nao eh uma opcao valida, escolha novamente!\n");
+    }    
+}
+
+int retornaDificuldadeAleatorio(){
+    int dificuldade = 0;
+    printf("Selecione a dificuldade: \n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
+    printf("Digite a dificuldade escolhida: ");
+    scanf("%i", &dificuldade);
+    printf("\n");
+    if(dificuldade == 1){
+        return 1;
+    } else if (dificuldade == 2){
+        return 2;
+    } else {
+        return 3; 
+    }
+}
+
+int retornaDificuldade(){
 
     srand(time(NULL));
     int z = rand() % 3, cont = 0;
@@ -324,4 +379,16 @@ int retornaValorInserido(int x, int y, int valor) {
     gridAtual[x][y] = valor;
     printGrid(gridAtual);
     return 1; 
+}
+
+int removerjogada(int x, int y){
+    for (int i = 0; i < 81; i++) {
+        if (coordenadas[i].x == x && coordenadas[i].y == y) {
+            printGrid(gridAtual);
+            printf("\nA coordenada inserida ja foi pre-preenchida, escolha outra!");
+            return 0; 
+        }
+    }
+    gridAtual[x][y] = 0;
+    printGrid(gridAtual);
 }
