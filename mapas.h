@@ -6,5 +6,5 @@ int retornaDificuldade();
 int telaInicial();
 int retornaValorInserido(int x, int y, int valor);
 int removerjogada(int x, int y);
-
-
+int VerificarJogo();
+void ranking();
