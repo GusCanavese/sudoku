@@ -22,6 +22,7 @@ RegistroTempo melhoresTempos[3];
 
 //Função para printar o grid
 void printGrid(int grid[9][9]) {
+    printf("*******************\n");
     printf("    ");
     for (int j = 0; j < 9; j++) {
         printf(" %d ", j);
@@ -72,7 +73,7 @@ void printGrid(int grid[9][9]) {
             printf("-");
         }
     }
-    printf("\n");
+    printf("\n*******************\n");
 }
     
     //Declaração dos tabuleiros pre definidos 
@@ -190,6 +191,7 @@ void printGrid(int grid[9][9]) {
 
 //func gerar numero aleatorio
 int isSafe(int grid[9][9], int row, int col, int num) {
+    
     for (int x = 0; x < 9; x++) {
         if (grid[row][x] == num || grid[x][col] == num) {
             return 0;
@@ -210,11 +212,16 @@ int isSafe(int grid[9][9], int row, int col, int num) {
     return 1;
 }
 
-
+//Função para gerar um mapa de sudoku completamente aleatório e válido
 void gerarMapaAleatorio(int maxNum) {
     srand(time(NULL));
     int gridAleatoria[9][9] = {0};
-    int preenchidos = 0;
+    int preenchidos = 0, cont = 0;
+
+    for (int i = 0; i < 81; i++) {
+        coordenadas[i].x = -1;
+        coordenadas[i].y = -1;
+    }
 
     while (preenchidos < maxNum) {
         int row = rand() % 9;
@@ -226,9 +233,16 @@ void gerarMapaAleatorio(int maxNum) {
             preenchidos++;
         }
     }
-
+    /* Os seguintes for's rodam o tabuleiro aleatorio sudoku, quando selecionado, procurando valores diferentes de 0, quando é achado 
+        ele armazenana na struct coordenadas para que quando o jogador for fazer alguma jogada, adicionar ou remover, primeiro será 
+        verificado se aquela coordenada não foi pre definida no tabuleiro*/
     for(int i=0; i<9; i++){
         for(int j=0; j<9; j++){
+            if (gridAleatoria[i][j] != 0){
+                coordenadas[cont].x = i;
+                coordenadas[cont].y = j;
+                cont++;
+            }
             gridAtual[i][j] = gridAleatoria[i][j];
         }
     }
@@ -266,10 +280,10 @@ int telaInicial(){
 //Função para printar as difiuldadeas dos tabuleiros aleatórios e retornar qual opção foi escolhida
 int retornaDificuldadeAleatorio(){
     int dificuldade = 0;
-    printf("Selecione a dificuldade: \n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
-    printf("Digite a dificuldade escolhida: ");
+    printf("**************************************\n");
+    printf("Selecione a dificuldade: \n\n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
+    printf("\nDigite a dificuldade escolhida: ");
     scanf("%i", &dificuldade);
-    printf("\n");
     if(dificuldade == 1){
         return 1;
     } else if (dificuldade == 2){
@@ -290,12 +304,15 @@ int retornaDificuldade(){
         coordenadas[i].y = -1;
     }
 
-    printf("Selecione a dificuldade: \n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
-    printf("Digite a dificuldade escolhida: ");
+    printf("**************************************\n");
+    printf("Selecione a dificuldade: \n\n 1 - Facil \n 2 - Medio \n 3 - Dificil \n");
+    printf("\nDigite a dificuldade escolhida: ");
     scanf("%i", &dificuldade);
-    printf("\n");
     if (dificuldade == 1){
         switch (z){
+        /* Os seguintes for's rodam cada tabuleiro do sudoku, quando selecionado, procurando valores diferentes de 0, quando é achado 
+        ele armazenana na struct coordenadas para que quando o jogador for fazer alguma jogada, adicionar ou remover, primeiro será 
+        verificado se aquela coordenada não foi pre definida no tabuleiro*/
         case 0:
             cont = 0;
             printGrid(grid1);
@@ -440,7 +457,8 @@ int retornaValorInserido(int x, int y, int valor) {
         }
         if (coordenadas[i].x == x && coordenadas[i].y == y) {
             printGrid(gridAtual);
-            printf("\nA coordenada inserida ja foi pre-preenchida, escolha outra!");
+            printf("Coordenada pre-preenchida, escolha outra!\n");
+            printf("**************************************\n");
             return 0;
         }
     }
@@ -454,7 +472,8 @@ int removerjogada(int x, int y){
     for (int i = 0; i < 81; i++) {
         if (coordenadas[i].x == x && coordenadas[i].y == y) {
             printGrid(gridAtual);
-            printf("\nA coordenada inserida ja foi pre-preenchida, escolha outra!");
+            printf("Coordenada pre-preenchida, escolha outra!\n");
+            printf("**************************************\n");
             return 0; 
         }
     }
@@ -471,7 +490,8 @@ int VerificarJogo(){
     for (int i = 0; i < 9; i++){
         for(int j = 0; j < 9;j++){
             if(gridAtual[i][j] == 0){
-                printf("\nFinalize o Sudoku primeiro para poder verificar!\n");
+                printf("Finalize o Sudoku primeiro para poder verificar!\n");
+                printf("**************************************\n");
                 return 0;
             }
         }
@@ -589,7 +609,7 @@ void ranking(){
 
     fclose(file);
 
-    printf("*******************\n");
+    printf("**************************************\n");
     for (int i = 0; i < 3; i++) {
         if (melhoresTempos[i].segundos < 9999.9f) {  // Ignora valores não atualizados
     printf("      %d - %d minutos %.2f segundos - Nome: %s      \n",i + 1,melhoresTempos[i].minutos, melhoresTempos[i].segundos, melhoresTempos[i].nome);
